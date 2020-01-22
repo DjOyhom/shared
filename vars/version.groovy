@@ -2,6 +2,7 @@
 
 def call(String dir = 'human') {
   echo "${dir}"
+  cat image_version.txt
   cd ${dir} && echo $(($(cat image_version.txt) + 1)) > image_version.txt
   cd ${dir} && git add .
   cd ${dir} && git commit -m "version:$(cat image_version.txt)"

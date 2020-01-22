@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def call(String dir = 'human') {
-  echo ${dir}
+  echo '${dir}'
   sh 'cd ${dir} && echo $(($(cat image_version.txt) + 1)) > image_version.txt'
   sh 'cd ${dir} && git add .'
   sh 'cd ${dir} && git commit -m "version:$(cat image_version.txt)"'

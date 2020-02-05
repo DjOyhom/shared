@@ -2,5 +2,5 @@
 
 def call(String dir = 'human') {
   sh 'cat /tmp/hugo/deploy.json'
-  sh 'cd /tmp/hugo && oc patch -f deploy.json -n hugo'
+  sh 'cd /tmp/hugo && oc patch -f deploy.json -p hugitoweb -n hugo'
 }
